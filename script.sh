@@ -229,6 +229,12 @@ then
 	esac
 fi
 
+# temp compat support
+if [ "${TRAVIS_DEBIAN_COMPONENTS:-}" = "" ]
+then
+	TRAVIS_DEBIAN_COMPONENTS="$TRAVIS_DEBIAN_POCKETS"
+fi
+
 
 ## Detect autopkgtest tests ###################################################
 
